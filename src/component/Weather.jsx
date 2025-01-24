@@ -100,10 +100,10 @@ export const Weather = () => {
             </div>
             </>:<></>
         }
-        <div className='place-self-center p-[10px] md:p-[40px] rounded-lg bg-gradient-to-r from-[#6378a6]  to-[#103783] flex flex-col items-center'>
+        <div className='place-self-center p-[10px] lg:p-[40px] rounded-lg bg-gradient-to-r from-[#6378a6]  to-[#103783] flex flex-col items-center'>
 
-            <div className="flex items-center gap-4 ">
-                <input ref={inputRef}  type="text" className="rounded-full p-1 border-none outline-none h-[50px] pl-[25px] text-[#626262] bg-[#ebfffc] text-xl" placeholder='Search' />
+            <div className="flex items-center gap-2 md:gap-4 ">
+                <input ref={inputRef}  type="text" className="rounded-full p-1 border-none outline-none h-[50px] pl-[25px] text-[#626262] bg-[#ebfffc] text-lg md:text-xl" placeholder='Search' />
                 <img src={search} alt="" onClick={()=>{handelClick(inputRef.current.value)}} className='w-10 p-2.5 rounded-full bg-[#ebfffc] cursor-pointer'/>
             </div>
 
