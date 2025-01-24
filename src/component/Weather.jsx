@@ -46,7 +46,7 @@ export const Weather = () => {
             setMsg(message);
             hide.current.style.top = '-50px';
             setTimeout(() => {
-            hide.current.style.top = '-550px';
+            hide.current.style.top = '-1000px';
             }, 1000);
         };
 
@@ -94,7 +94,7 @@ export const Weather = () => {
 
         {
             weatherData?<>
-            <div ref={hide} className="absolute top-[-550px] left-[50px] border h-[40px] w-[70%] flex justify-between items-center bg-gradient-to-r from-[#6378a6]  to-[#103783] rounded-md px-5 duration-75">
+            <div ref={hide} className="absolute top-[-1000px] left-[50px] border h-[40px] w-[70%] flex justify-between items-center bg-gradient-to-r from-[#6378a6]  to-[#103783] rounded-md px-5 duration-75">
             <p className='text-lg text-white'>{msg}</p>
             <AiOutlineCloseCircle className='text-red-600 h-7 w-7' onClick={()=>{hide.current.style.top='-150px'}}/>
             </div>
@@ -129,10 +129,14 @@ export const Weather = () => {
                     <span>Wind speed</span>
                     </div>
                 </div>
+                
             </div>
+            <p className='mt-[60px] text-white text-mg '>Designed by <span className='font-bold'>Thison Rooban J</span></p>
             </>:<></>
             }
         </div>
+
+        
     </div>
   )
 }
