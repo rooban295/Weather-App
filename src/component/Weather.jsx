@@ -94,13 +94,13 @@ export const Weather = () => {
 
         {
             weatherData?<>
-            <div ref={hide} className="absolute top-[-150px] left-[50px] border h-[40px] w-[70%] flex justify-between items-center bg-gradient-to-r from-[#2f4680] to-[#500ae4] rounded-md px-5 duration-75">
+            <div ref={hide} className="absolute top-[-150px] left-[50px] border h-[40px] w-[70%] flex justify-between items-center bg-gradient-to-r from-[#6378a6]  to-[#103783] rounded-md px-5 duration-75">
             <p className='text-lg text-white'>{msg}</p>
             <AiOutlineCloseCircle className='text-red-600 h-7 w-7' onClick={()=>{hide.current.style.top='-150px'}}/>
             </div>
             </>:<></>
         }
-        <div className='place-self-center p-[20px] md:p-[40px] rounded-lg bg-gradient-to-r from-[#2f4680] to-[#500ae4] flex flex-col items-center'>
+        <div className='place-self-center p-[20px] md:p-[40px] rounded-lg bg-gradient-to-r from-[#6378a6]  to-[#103783] flex flex-col items-center'>
 
             <div className="flex items-center gap-4 ">
                 <input ref={inputRef}  type="text" className="rounded-full p-1 border-none outline-none h-[50px] pl-[25px] text-[#626262] bg-[#ebfffc] text-xl" placeholder='Search' />
