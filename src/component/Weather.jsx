@@ -103,14 +103,14 @@ export const Weather = () => {
         <div className='place-self-center p-[10px] lg:p-[40px] rounded-lg bg-gradient-to-r from-[#6378a6]  to-[#103783] flex flex-col items-center'>
 
             <div className="flex items-center gap-2 md:gap-4 ">
-                <input ref={inputRef}  type="text" className="rounded-full p-1 border-none outline-none h-[50px] pl-[25px] text-[#626262] bg-[#ebfffc] text-lg md:text-xl" placeholder='Search' />
-                <img src={search} alt="" onClick={()=>{handelClick(inputRef.current.value)}} className='w-10 p-2.5 rounded-full bg-[#ebfffc] cursor-pointer'/>
+                <input ref={inputRef}  type="text" className="rounded-full p-1 border-none outline-none h-[50px] pl-[25px] text-[#626262] bg-[#ebfffc] text-[15px] md:text-xl" placeholder='Search' />
+                <img src={search} alt="" onClick={()=>{handelClick(inputRef.current.value)}} className='w-10 md:w-15 p-2.5 rounded-full bg-[#ebfffc] cursor-pointer'/>
             </div>
 
             {
                 weatherData?<>  
-            <img src={weatherData.icon} alt="" className="" />
-            <p className='text-7xl my-8 text-white leading-7'>{weatherData.temperture}°c</p>
+            <img src={weatherData.icon} alt="" className="w-36 md:w-[60%]" />
+            <p className='text-5xl md:text-7xl my-8 text-white leading-7'>{weatherData.temperture}°c</p>
             <p className='text-white text-5xl '>{weatherData.cityname}</p>
 
             <div className="mt-10 flex justify-between w-full text-white">
