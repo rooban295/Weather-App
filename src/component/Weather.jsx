@@ -90,17 +90,20 @@ export const Weather = () => {
    
 
   return (
-    <div className='relative'>
+    <div>
+
+    <div className='relative mt-10'>
 
         {
             weatherData?<>
-            <div ref={hide} className="absolute top-[-1000px] left-[50px] border h-[40px] w-[70%] flex justify-between items-center bg-gradient-to-r from-[#6378a6]  to-[#103783] rounded-md px-5 duration-75">
-            <p className='text-lg text-white'>{msg}</p>
+            <div ref={hide} className="absolute top-[-1000px] left-[40px] lg:left-[70px] border h-[50px] flex justify-between items-center bg-gradient-to-r from-[#6378a6]  to-[#103783] rounded-md px-5 duration-75">
+            <p className='text-sm lg:text-md text-white mr-4'>{msg}</p>
             <AiOutlineCloseCircle className='text-red-600 h-7 w-7' onClick={()=>{hide.current.style.top='-150px'}}/>
             </div>
             </>:<></>
         }
-        <div className='place-self-center p-[10px] lg:p-[40px] rounded-lg bg-gradient-to-r from-[#6378a6]  to-[#103783] flex flex-col items-center'>
+
+        <div className='h-full place-self-center p-[10px] lg:p-[40px] rounded-lg bg-gradient-to-r from-[#6378a6]  to-[#103783] flex flex-col items-center'>
 
             <div className="flex items-center gap-2 md:gap-4 ">
                 <input ref={inputRef}  type="text" className="rounded-full p-1 border-none outline-none h-[50px] pl-[25px] text-[#626262] bg-[#ebfffc] text-[15px] md:text-xl" placeholder='Search' />
@@ -131,12 +134,14 @@ export const Weather = () => {
                 </div>
                 
             </div>
-            <p className='mt-[60px] text-white text-mg '>Designed by <span className='font-bold'>Thison Rooban J</span></p>
+            <p className='mt-[30px] text-white text-mg '>Designed by <span className='font-bold'>Thison Rooban J</span></p>
             </>:<></>
             }
         </div>
 
         
+    </div>
+
     </div>
   )
 }
