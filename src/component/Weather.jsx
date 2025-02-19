@@ -10,6 +10,7 @@ import rain from '../assets/rain.png'
 import axios from 'axios'
 import { useRef } from 'react'
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { Flip, ToastContainer, toast } from 'react-toastify';
 
 export const Weather = () => {
     
@@ -42,21 +43,13 @@ export const Weather = () => {
 
       const searchWeather =  (city)=>{
 
-        const showNotification = (message) => {
-            setMsg(message);
-            hide.current.style.top = '-50px';
-            setTimeout(() => {
-            hide.current.style.top = '-1000px';
-            }, 1000);
-        };
-
         if(city===''){
-            showNotification('Enter Location name')
+            toast.warning("Enter Location name")
             return;
         }
             axios.post(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_ID}`)
             .then((res)=>{
-                
+                toast.success("Location updated successfully") 
                 const icon=allIcon[res.data.weather[0].icon] || clear;
                 setWeatherData({
                     cityname:res.data.name,
@@ -69,10 +62,9 @@ export const Weather = () => {
             })
             .catch((error)=>{
                 if(error.status===404){
-                    showNotification('Data is Not Found')
+                    toast.error("Data is not found")
                     return;
                 }
-                console.log("api is not working")
                 setWeatherData(false);
             })     
         }
@@ -91,17 +83,9 @@ export const Weather = () => {
 
   return (
     <div>
+    <ToastContainer hideProgressBar={true} closeButton={false} toastStyle={{background:'#103783', color:'white', height:'50px', width:''}} position='top-center' autoClose={2000}/>
 
     <div className='relative mt-10'>
-
-        {
-            weatherData?<>
-            <div ref={hide} className="absolute top-[-1000px] left-[40px] lg:left-[70px] border h-[50px] flex justify-between items-center bg-gradient-to-r from-[#6378a6]  to-[#103783] rounded-md px-5 duration-75">
-            <p className='text-sm lg:text-md text-white mr-4'>{msg}</p>
-            <AiOutlineCloseCircle className='text-red-600 h-7 w-7' onClick={()=>{hide.current.style.top='-150px'}}/>
-            </div>
-            </>:<></>
-        }
 
         <div className='h-full place-self-center p-[10px] lg:p-[40px] rounded-lg bg-gradient-to-r from-[#6378a6]  to-[#103783] flex flex-col items-center'>
 
